@@ -1,20 +1,7 @@
 #  LINK TO DATA        https://huggingface.co/datasets/Bingsu/Cat_and_Dog
 import torch
-from torchvision.transforms.functional import get_image_size,get_image_num_channels
 from torchvision import transforms
 from datasets import load_dataset
-
-#ds = load_dataset("Bingsu/Cat_and_Dog")
-#print(ds)
-#
-#image0=ds['train']['image'][0]
-#print('Image size: ',get_image_size(image0))
-#print('Image num channels: ',get_image_num_channels(image0))
-#
-#transform = transforms.Compose([
-#    transforms.ToTensor(),
-#    transforms.Resize((300,280))
-#])
 
 class CatDogDataset(torch.utils.data.Dataset):
     def __init__(self,train_or_test):

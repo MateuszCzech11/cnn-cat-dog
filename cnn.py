@@ -1,9 +1,4 @@
 import torch.nn as nn
-#create cnn model
-#train it on data 
-# validate on data
-# save weights and architecture
-# create new file where load weights and architecture, and where you put in your own image and it guesses
 
 class DogCatClassifier(nn.Module):
     def __init__(self):
@@ -16,12 +11,12 @@ class DogCatClassifier(nn.Module):
             nn.Conv2d(32,64,kernel_size=3,stride=1,padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2,stride=2),
-            nn.Conv2d(64,128,kernel_size=3,stride=1,padding=1),
+            nn.Conv2d(64,64,kernel_size=3,stride=1,padding=1),
             nn.ReLU(), #128x75x70
             nn.MaxPool2d(kernel_size=2,stride=2,padding=1),#w/o padding dimensions no longer integers - this way its 128x38x36
             nn.Flatten()
         )
-        self.fc1=nn.Linear(128*38*36,128)
+        self.fc1=nn.Linear(64*38*36,128)
         self.relu=nn.ReLU()
         self.drop=nn.Dropout(0.5)
         self.fc2=nn.Linear(128,1)
