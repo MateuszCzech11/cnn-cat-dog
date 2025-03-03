@@ -2,3 +2,4 @@
 __pycache__
 activate_env.txt
 info.py
+cat_dog_classifier.pt
